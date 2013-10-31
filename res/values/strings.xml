@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Product Open Data</string>
+    
+    <string name="title_activity_main">Product Open Data</string>
+    <string name="title_activity_gtin_found">Product found !</string>
+    <string name="title_activity_gtin_not_valid">This GTIN-13 code is not correct</string>
+    <string name="title_activity_gtin_not_found">Product not Found</string>
+
+    <string name="edit_gtin">Enter a GTIN code</string>
+    <string name="button_send">Search</string>
+    <string name="action_settings">Settings</string>
+    <string name="lb_gtin">GTIN code : </string>
+    <string name="lb_gcp">GCP code : </string>
+    <string name="lb_gtin_nm">Name : </string>
+    <string name="lb_gtin_ct">Packaging : </string>
+    <string name="lb_brand_nm">Brand : </string>
+    <string name="Message_GTIN_Not_Valid">		GTIN-13 code is the code printed just below the barcode. \n\n
+		If the code only contains 12 digits, add a zero in front of the code to get the GTIN-13 code.	</string>
+    <string name="Message_GTIN_Not_Found">Sorry, this GTIN code is not in the database.</string>
+
+    <string name="H2_Product">Product information</string>
+    <string name="H2_Gepir">Owner information</string>
+    
+    <string name="text_home">Find on the product the digits printed below the barcode. 13 digits are required, if you have 12 digits, just add a 0 in the first position.\n</string>   
+    <string name="text_home2">This app is powered with the data of the Product Open Data project of Open Knowledge Foundation..</string>   
+    
+
+</resources>
