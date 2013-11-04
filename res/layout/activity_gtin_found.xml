@@ -67,7 +67,7 @@
 	                android:layout_width="wrap_content"
 	                android:layout_height="wrap_content"
 	                android:textStyle="bold"
-	                android:textSize="10sp" 
+	                android:textSize="12sp" 
 	                android:layout_marginRight="4dp"
 	                android:text="@string/lb_gtin" />
 	          
@@ -88,7 +88,7 @@
 	                android:layout_width="wrap_content"
 	                android:layout_height="wrap_content"
 	                android:textStyle="bold"
-	                android:textSize="10sp" 
+	                android:textSize="12sp" 
 	                android:layout_marginRight="4dp"
 	                android:text="@string/lb_gcp" />
 	          
@@ -110,7 +110,7 @@
 	                android:layout_width="wrap_content"
 	                android:layout_height="wrap_content"
 	               	android:textStyle="bold"
-	                android:textSize="10sp" 
+	                android:textSize="12sp" 
 	                android:layout_marginRight="4dp"
 	                android:text="@string/lb_gtin_nm"
 	                />
@@ -132,7 +132,7 @@
 	                android:layout_width="wrap_content"
 	                android:layout_height="wrap_content"
 	                android:textStyle="bold"
-	                android:textSize="10sp" 
+	                android:textSize="12sp" 
 	                android:layout_marginRight="4dp"
 	                android:text="@string/lb_gtin_ct" />
 	          
@@ -153,7 +153,7 @@
 	                android:layout_width="wrap_content"
 	                android:layout_height="wrap_content"
 	               	android:textStyle="bold"
-	                android:textSize="10sp" 
+	                android:textSize="12sp" 
 	              	android:layout_marginRight="4dp"
 	                android:text="@string/lb_brand_nm" />
 	          

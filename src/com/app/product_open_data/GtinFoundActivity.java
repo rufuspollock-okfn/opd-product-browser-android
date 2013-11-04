@@ -185,22 +185,22 @@ public class GtinFoundActivity extends Activity {
 		
 		// GTIN CD
 		TextView tv_gtin_code = (TextView) findViewById(R.id.textView1);
-		tv_gtin_code.setTextSize(10);
+		tv_gtin_code.setTextSize(12);
 		tv_gtin_code.setText(value_gtin_code);
 		
 		// GCP CODE
 		TextView tv_gcp_code = (TextView) findViewById(R.id.textView6);
-		tv_gcp_code.setTextSize(10);
+		tv_gcp_code.setTextSize(12);
 		tv_gcp_code.setText(value_gcp_code);
 
 		// BRAND
 		TextView tv_brand_name = (TextView) findViewById(R.id.textView3);
-		tv_brand_name.setTextSize(10);
+		tv_brand_name.setTextSize(12);
 		tv_brand_name.setText(value_brand_name);
 		
 		// GTIN NAME
 		TextView tv_gtin_name = (TextView) findViewById(R.id.textView2);
-		tv_gtin_name.setTextSize(10);
+		tv_gtin_name.setTextSize(12);
 		if(value_gtin_product_line != "null") {
 			tv_gtin_name.setText(value_gtin_product_line+" - "+value_gtin_name);
 		} else {
@@ -209,7 +209,7 @@ public class GtinFoundActivity extends Activity {
 
 		// WEIGHT & VOLUME
 		TextView tv_gtin_weigth = (TextView) findViewById(R.id.textView7);
-		tv_gtin_weigth.setTextSize(10);
+		tv_gtin_weigth.setTextSize(12);
 		if( (value_gtin_weight != "null") || (value_gtin_volume != "null" ) ) {
 			
 			String weigth_volume = "";
@@ -228,11 +228,11 @@ public class GtinFoundActivity extends Activity {
 		// GEPIR Data 
 		
 		TextView tv_gepir_gln_name = (TextView) findViewById(R.id.textView4);
-		tv_gepir_gln_name.setTextSize(10);
+		tv_gepir_gln_name.setTextSize(12);
 		tv_gepir_gln_name.setText(value_gepir_gln_name);
 
 		TextView tv_gepir_gln_address_1 = (TextView) findViewById(R.id.textView5);
-		tv_gepir_gln_address_1.setTextSize(10);
+		tv_gepir_gln_address_1.setTextSize(12);
 		tv_gepir_gln_address_1.setText(Address_gln);
 
 		
