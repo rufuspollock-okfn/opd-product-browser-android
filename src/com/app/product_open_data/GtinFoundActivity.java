@@ -8,8 +8,10 @@ import java.net.URL;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.app.Activity;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ImageView;
@@ -32,6 +34,11 @@ public class GtinFoundActivity extends Activity {
 		setContentView(R.layout.activity_gtin_found);
 		// Show the Up button in the action bar.
 		setupActionBar();
+
+		  //new Thread(new Runnable() {
+			    //public void run() {
+
+	
 		
 	    String value_gtin_code = null;
 	    String value_gtin_name = null;
@@ -77,10 +84,11 @@ public class GtinFoundActivity extends Activity {
 		String value_gepir_gln_city = null;
 		String value_gepir_gln_country = null;
 		String json = "";
+		String extra_json = "";
 
 	    // Get the message from the intent
 	    Intent intent = getIntent();
-	    String extra_json = intent.getStringExtra(MainActivity.EXTRA_MESSAGE);
+	    extra_json = intent.getStringExtra(MainActivity.EXTRA_MESSAGE);
 		
 		try {
 			
@@ -127,7 +135,7 @@ public class GtinFoundActivity extends Activity {
 		
 			
 			JSONObject gpc = object.getJSONObject("gpc");
-			value_gpc_img 			= group.getString("img");	
+			value_gpc_img 			= gpc.getString("img");	
 			JSONObject gpc_segment = gpc.getJSONObject("segment");
 			value_gpc_segment_code 			= gpc_segment.getString("code");
 			value_gpc_segment_name 			= gpc_segment.getString("name");
@@ -151,27 +159,51 @@ public class GtinFoundActivity extends Activity {
 		// GET IMAGES ---------------------- 
 		
 		// GTIN IMG
-		try {
-			  ImageView i = (ImageView)findViewById(R.id.imageView1);
-			  Bitmap bitmap = BitmapFactory.decodeStream((InputStream)new URL(value_gtin_img).getContent());
-			  i.setImageBitmap(bitmap); 
-		} catch (MalformedURLException e) {
-			  e.printStackTrace();
-			} catch (IOException e) {
-			  e.printStackTrace();
-			}
+		
+		new DownloadImageTask((ImageView) findViewById(R.id.imageView1))
+        .execute(value_gtin_img);
 		
 		// BRAND IMG
-		try {
-			  ImageView i = (ImageView)findViewById(R.id.imageView2);
-			  Bitmap bitmap = BitmapFactory.decodeStream((InputStream)new URL(value_brand_img).getContent());
-			  i.setImageBitmap(bitmap); 
-		} catch (MalformedURLException e) {
-			  e.printStackTrace();
-			} catch (IOException e) {
-			  e.printStackTrace();
-			}
 		
+		new DownloadImageTask((ImageView) findViewById(R.id.imageView2))
+        .execute(value_brand_img);
+		
+		/*	
+		// GTIN IMG	
+		ImageView i;
+		Bitmap bitmap = null;	
+		i = (ImageView)findViewById(R.id.imageView1);
+
+		try {
+			bitmap = BitmapFactory.decodeStream((InputStream)new URL(value_gtin_img).getContent());
+			i.setImageBitmap(bitmap); 
+		} catch (MalformedURLException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		} catch (IOException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
+		
+
+		// BRAND IMG
+		ImageView i2;
+		Bitmap bitmap2 = null;	
+		i2 = (ImageView)findViewById(R.id.imageView2);
+
+
+		try {
+			bitmap2 = BitmapFactory.decodeStream((InputStream)new URL(value_brand_img).getContent());
+		} catch (MalformedURLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	    i2.setImageBitmap(bitmap2); 
+
+		*/
 		String Address_gln = value_gepir_gln_address_1;
 		if(value_gepir_gln_address_1 != null && !value_gepir_gln_address_1.isEmpty())  Address_gln = Address_gln+"\n";
 		Address_gln = Address_gln+value_gepir_gln_address_2;
@@ -235,7 +267,9 @@ public class GtinFoundActivity extends Activity {
 		tv_gepir_gln_address_1.setTextSize(12);
 		tv_gepir_gln_address_1.setText(Address_gln);
 
-		
+	       //}
+		    
+	 // }).start();		
 	}
 
 	/**
@@ -272,4 +306,29 @@ public class GtinFoundActivity extends Activity {
 		return super.onOptionsItemSelected(item);
 	}
 
+	private class DownloadImageTask extends AsyncTask<String, Void, Bitmap> {
+		  ImageView bmImage;
+
+		  public DownloadImageTask(ImageView bmImage) {
+		      this.bmImage = bmImage;
+		  }
+
+		  protected Bitmap doInBackground(String... urls) {
+		      String urldisplay = urls[0];
+		      Bitmap mIcon11 = null;
+		      try {
+		        InputStream in = new java.net.URL(urldisplay).openStream();
+		        mIcon11 = BitmapFactory.decodeStream(in);
+		      } catch (Exception e) {
+		          Log.e("Error", e.getMessage());
+		          e.printStackTrace();
+		      }
+		      return mIcon11;
+		  }
+
+		  protected void onPostExecute(Bitmap result) {
+		      bmImage.setImageBitmap(result);
+		  }
+		}
+	
 }
