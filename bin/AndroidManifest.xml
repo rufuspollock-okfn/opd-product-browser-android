@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.app.product_open_data"
+    package="org.okfn.pod"
     android:versionCode="8"
     android:versionName="1.00.08" >
 
@@ -16,7 +16,7 @@
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
         <activity
-            android:name="com.app.product_open_data.MainActivity"
+            android:name="org.okfn.pod.MainActivity"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -25,28 +25,28 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.app.product_open_data.GtinNotValidActivity"
+            android:name="org.okfn.pod.GtinNotValidActivity"
             android:label="@string/title_activity_gtin_not_valid"
-            android:parentActivityName="com.app.product_open_data.MainActivity" >
+            android:parentActivityName="org.okfn.pod.MainActivity" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.app.product_open_data.DisplayMessageActivity" />
+                android:value="org.okfn.pod.DisplayMessageActivity" />
         </activity>
         <activity
-            android:name="com.app.product_open_data.GtinNotFoundActivity"
+            android:name="org.okfn.pod.GtinNotFoundActivity"
             android:label="@string/title_activity_gtin_not_found"
-            android:parentActivityName="com.app.product_open_data.MainActivity" >
+            android:parentActivityName="org.okfn.pod.MainActivity" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.app.product_open_data.DisplayMessageActivity" />
+                android:value="org.okfn.pod.DisplayMessageActivity" />
         </activity>
         <activity
-            android:name="com.app.product_open_data.GtinFoundActivity"
+            android:name="org.okfn.pod.GtinFoundActivity"
             android:label="@string/title_activity_gtin_found"
-            android:parentActivityName="com.app.product_open_data.MainActivity" >
+            android:parentActivityName="org.okfn.pod.MainActivity" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.app.product_open_data.MainActivity" />
+                android:value="org.okfn.pod.MainActivity" />
         </activity>
     </application>
 
