@@ -19,7 +19,7 @@ import android.widget.Toast;
 
 public class MainActivity extends Activity {
 	
-	public final static String EXTRA_MESSAGE = "com.example.myfirstapp.MESSAGE";
+	public final static String EXTRA_MESSAGE = "";
 	public String gtin;
 
 
@@ -27,7 +27,7 @@ public class MainActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
-		this.callScan(getCurrentFocus());
+		//this.callScan(getCurrentFocus());
 	}
 
 	/** Called when the user clicks the Send button */

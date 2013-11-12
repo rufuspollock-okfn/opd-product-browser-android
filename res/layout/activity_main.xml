@@ -27,13 +27,22 @@
     
     
     <Button
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:onClick="sendMessage"
         android:paddingLeft="50dp"
         android:paddingRight="50dp"
         android:text="@string/button_send" />
+    
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:onClick="callScan"
+        android:paddingLeft="50dp"
+        android:paddingRight="50dp"
+        android:text="@string/button_scan" />
 
     <TextView
         android:layout_width="match_parent"
