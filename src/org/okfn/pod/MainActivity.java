@@ -20,7 +20,7 @@ import android.widget.Toast;
 public class MainActivity extends Activity {
 	
 	public final static String EXTRA_MESSAGE = "";
-	public String gtin;
+	public String gtin = "";
 
 
 	@Override
@@ -34,8 +34,15 @@ public class MainActivity extends Activity {
 	public void sendMessage(View view) {
 	    // Do something in response to button
 
-        EditText editText = (EditText) findViewById(R.id.edit_gtin);
-        editText.setText(gtin);
+        
+		if(gtin.length() > 0) {
+			EditText editText = (EditText) findViewById(R.id.edit_gtin);
+			editText.setText(gtin);
+		} else {
+        
+			EditText editText = (EditText) findViewById(R.id.edit_gtin);
+			gtin = editText.getText().toString();
+		}
 
 	    int value_code = 99;
 	    String json = "";
