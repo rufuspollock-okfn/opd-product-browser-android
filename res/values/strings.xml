@@ -5,6 +5,7 @@
     
     <string name="title_activity_main">Product Open Data</string>
     <string name="title_activity_gtin_found">Product found !</string>
+    <string name="title_activity_gcp_found">Product found !</string>
     <string name="title_activity_gtin_not_valid">This GTIN-13 code is not correct</string>
     <string name="title_activity_gtin_not_found">Product not Found</string>
 

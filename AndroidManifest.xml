@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="org.okfn.pod"
-    android:versionCode="12"
-    android:versionName="1.00.12" >
+    android:versionCode="13"
+    android:versionName="1.00.13" >
 
     <uses-sdk
         android:minSdkVersion="8"
@@ -43,6 +43,14 @@
         <activity
             android:name="org.okfn.pod.GtinFoundActivity"
             android:label="@string/title_activity_gtin_found"
+            android:parentActivityName="org.okfn.pod.MainActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="org.okfn.pod.MainActivity" />
+        </activity>
+        <activity
+            android:name="org.okfn.pod.GcpFoundActivity"
+            android:label="@string/title_activity_gcp_found"
             android:parentActivityName="org.okfn.pod.MainActivity" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"

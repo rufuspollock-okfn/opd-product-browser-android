@@ -21,6 +21,7 @@ public class MainActivity extends Activity {
 	
 	public final static String EXTRA_MESSAGE = "";
 	public String gtin = "";
+	public Integer search_mode = 0; // 0 : manual search , 1: scanner
 
 
 	@Override
@@ -35,11 +36,11 @@ public class MainActivity extends Activity {
 	    // Do something in response to button
 
         
-		if(gtin.length() > 0) {
+		if(search_mode == 1) {
 			EditText editText = (EditText) findViewById(R.id.edit_gtin);
 			editText.setText(gtin);
+			search_mode = 0; 
 		} else {
-        
 			EditText editText = (EditText) findViewById(R.id.edit_gtin);
 			gtin = editText.getText().toString();
 		}
@@ -90,13 +91,18 @@ public class MainActivity extends Activity {
 			startActivity(intent);
 			break;
 	    case 1:
-			Intent intent3 = new Intent(this, GtinNotFoundActivity.class);
-			startActivity(intent3);	
+			Intent intent1 = new Intent(this, GtinNotFoundActivity.class);
+			startActivity(intent1);	
 			break; 
 	    case 2:
 			Intent intent2 = new Intent(this, GtinNotValidActivity.class);
 			startActivity(intent2);
 			break; 
+	    case 3:
+			Intent intent3 = new Intent(this, GcpFoundActivity.class);
+			intent3.putExtra(EXTRA_MESSAGE, json);
+			startActivity(intent3);
+			break;
 	    case 98:
 			Toast.makeText(this,"Gtin code required",1000).show();
 			break;
@@ -137,6 +143,7 @@ public class MainActivity extends Activity {
 			if (scanResult != null) {
 				gtin = intent.getStringExtra("SCAN_RESULT");
 				gtin = ("0000000000000"+gtin).substring(gtin.length());
+				search_mode = 1;
 				this.sendMessage(getCurrentFocus());
 			} // end 'scanResult != null'
 		} // end 'resultCode != RESULT_CANCELED'
